@@ -1,0 +1,14 @@
+tr button {
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    transition: all ease-in-out 300ms;
+    background-color: rebeccapurple;
+    color: white;
+}
+
+tr button:hover {
+    background-color: #535bf2;
+}
