@@ -1,0 +1,116 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 4rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+/* Tablas */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.table-container th,
+.table-container td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table-container th {
+  background-color: #2c2c2c;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #242424;
+}
+
+.table-container tr:hover {
+  background-color: #333333;
+}
+
+.table-container caption {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #646cff;
+}
+
+/* Formularios */
+.formulario label {
+  font-size: 1em;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 4px #646cff;
+}
+
+.formulario button {
+  grid-column: span 2;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #646cff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+  background-color: #535bf2;
+}
+
+.formulario button:focus {
+  outline: none;
+  box-shadow: 0 0 4px #535bf2;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .formulario {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .formulario label {
+    text-align: left;
+  }
+
+  .formulario button {
+    grid-column: span 1;
+  }
+}
