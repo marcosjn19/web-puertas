@@ -5,7 +5,7 @@
 
     color-scheme: light dark;
     
-
+    width: 100%;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -50,10 +50,6 @@ html, body {
   padding: 0;
   width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
   h1 {
     font-size: 3.2em;

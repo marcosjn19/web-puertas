@@ -4,7 +4,8 @@ import RowRegistro from './table/RowRegistro'
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
-
+import { io } from 'socket.io-client';
+import useSocket from './useSocket';
 function App() {
   const [array, setArray] = useState([])
   const [arrayRegistros, setRegistros] = useState([])
@@ -13,6 +14,10 @@ function App() {
       usuario: "",
     });
 
+    useSocket(() => {
+      window.location.reload();
+    });
+    
     const handleChange = (e) => {
       const { name, value } = e.target;
       setFormData((prevData) => ({
@@ -40,6 +45,7 @@ function App() {
     setArray(response.data.clientes)
 
     const registros = await axios.get("/registros")
+    console.log(registros.data.registros)
     setRegistros(registros.data.registros)
   }
 
@@ -50,6 +56,20 @@ function App() {
   return (
     <>
     <div className='main-container'>
+      <h1>Control de puerta 🚪</h1>
+      <h2>Equipo:</h2>
+      <ul>
+        <li>21130847 Sergio A. Lopez Delgado</li>
+        <li>21130848 Manuel Mijares Lara</li>
+        <li>21130852 Marcos E. Juárez Navarro</li>
+        <li>21130856 Alejandro Cabrera Mendez</li>
+        <li>21130869 Juan Fernando Vaquera Sanchez</li>
+        <li>21130874 Leopoldo Zavala Gonzalez</li>
+        <li>21130882 Miriam A. Sánchez Cervantes</li>
+        <li>21130893 Diego Muñoz Rede</li>
+        <li>21130923 Gael Costilla Garcia</li>
+      </ul>
+
       <h2>Usuarios</h2>
       <div className='table-container'>
         <table>
@@ -90,8 +110,7 @@ function App() {
         </form>
       </div>
 
-      
-      <h2>Registros</h2>
+      <h2>Log</h2>
       <div className='table-container'>
         <table>
         <thead>
@@ -99,15 +118,17 @@ function App() {
             <th>ID</th>
             <th>RFID</th>
             <th>FECHA Y HORA</th>
+            <th>PERMISO</th>
           </tr>
         </thead>
         <tbody>
       {
-        arrayRegistros.map(({ id, rfid, time }) => (
+        arrayRegistros.map(({ id, rfid, time, aprobado}) => (
           <RowRegistro
             id_lectura={id}
             rfid={rfid}
             fecha_hora={time}
+            aprobado={aprobado}
           >
           </RowRegistro>
         ))

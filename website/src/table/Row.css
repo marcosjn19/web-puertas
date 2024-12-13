@@ -2,8 +2,6 @@ tr button {
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
     transition: all ease-in-out 300ms;
     background-color: rebeccapurple;
     color: white;
@@ -11,4 +9,16 @@ tr button {
 
 tr button:hover {
     background-color: #535bf2;
+}
+
+.False {
+    background-color: red;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+.True {
+    background-color: green;
+    padding: 0.3rem;
+    text-align: center;
 }

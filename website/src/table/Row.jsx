@@ -1,7 +1,7 @@
 import './Row.css'
 import axios from 'axios';
 
-function Row({id, rfid, user, flag}) {   
+function Row({id, rfid, user}) {   
 const eliminarUsuario = async () => {
     await axios.delete(`/deleteuser/${id}`); 
     location.reload(true)
